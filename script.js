@@ -12,7 +12,7 @@ fetch("https://striveschool-api.herokuapp.com/books?")
                             <div class="card-body">
                                 <h5 class="card-title">${book.title}</h5>
                                 <p class="card-text">Price:${book.price}€</p>
-                                <a href="#" class="btn btn-primary scarta-btn">Scarta</a>
+                                <a href="#" class="btn btn-danger scarta-btn">Remove</a>
                             </div>
                         </div>
         `;
@@ -22,7 +22,7 @@ fetch("https://striveschool-api.herokuapp.com/books?")
     const scartaBtn = document.querySelectorAll(".scarta-btn");
     scartaBtn.forEach(button => {
       button.addEventListener("click", () => {
-        const card = button.closest(".card");
+        const card = button.closest(".col");
         if (card) {
           card.remove();
         }
